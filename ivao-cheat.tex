@@ -1,421 +1,68 @@
-\documentclass[9pt,a4paper]{extarticle}
-
-% ---------- Encoding and typography ----------
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage{lmodern}
-\usepackage{microtype}
-
-% ---------- Layout ----------
-\usepackage[
-  a4paper,
-  top=12mm,
-  bottom=14mm,
-  left=12mm,
-  right=12mm
-]{geometry}
-\usepackage{multicol}
-\usepackage{enumitem}
-\usepackage{tabularx}
-\usepackage{array}
-\usepackage{fancyhdr}
-\usepackage[most]{tcolorbox}
-\usepackage{hyperref}
-
-% ---------- Colours ----------
-\definecolor{navy}{HTML}{17324D}
-\definecolor{blue}{HTML}{246B9E}
-\definecolor{teal}{HTML}{087F8C}
-\definecolor{amber}{HTML}{A86400}
-\definecolor{ink}{HTML}{263445}
-\definecolor{muted}{HTML}{617084}
-\definecolor{paper}{HTML}{F3F6FA}
-
-\hypersetup{
-  colorlinks=true,
-  urlcolor=blue,
-  linkcolor=blue,
-  pdftitle={IVAO IFR Cheatsheet},
-  pdfauthor={},
-  pdfsubject={Flight simulation reference}
-}
-
-% ---------- Global formatting ----------
-\color{ink}
-\pagestyle{fancy}
-\fancyhf{}
-\renewcommand{\headrulewidth}{0pt}
-\fancyfoot[L]{\scriptsize\color{muted}
-  IVAO IFR quick reference \hspace{0.5em}|\hspace{0.5em} Simulation only}
-\fancyfoot[R]{\scriptsize\color{muted}\thepage/2}
-
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{3pt}
-\setlength{\columnsep}{6mm}
-\setlength{\multicolsep}{5pt}
-\setlength{\emergencystretch}{1em}
-
-\setlist[itemize]{
-  leftmargin=1.15em,
-  itemsep=1pt,
-  topsep=2pt,
-  parsep=0pt
-}
-\setlist[enumerate]{
-  leftmargin=1.4em,
-  itemsep=1pt,
-  topsep=2pt,
-  parsep=0pt
-}
-
-% ---------- Reusable elements ----------
-\tcbset{
-  card/.style={
-    enhanced,
-    colback=white,
-    colframe=blue!35,
-    colbacktitle=navy,
-    coltitle=white,
-    fonttitle=\bfseries,
-    boxrule=0.45pt,
-    arc=2mm,
-    left=2.5mm,
-    right=2.5mm,
-    top=2mm,
-    bottom=2mm,
-    before skip=5pt,
-    after skip=5pt
-  }
-}
-
-\newtcolorbox{card}[2][]{
-  card,
-  title={#2},
-  #1
-}
-
-\newcommand{\labeltext}[1]{%
-  \textbf{\color{teal}#1}%
-}
-
-\newcommand{\radio}[1]{%
-  \par\smallskip
-  {\small\itshape\textbf{``#1''}}\par\smallskip
-}
-
-\newcommand{\warning}[1]{%
-  \par{\small\color{amber}\textbf{Remember:} #1}\par
-}
-
-\newcommand{\pagetitle}[2]{%
-  {\LARGE\bfseries\color{navy}#1}\par
-  {\small\color{muted}#2}\par
-  \vspace{2pt}
-  {\color{teal}\hrule height 1.2pt}
-  \vspace{3pt}
-}
-
+\documentclass{article}
+\newcommand{\callsign}{D-BWEDE}
+\newcommand{\destination}{Southampton}
+\newcommand{\SID}{SOBRA1F}
+\newcommand{\squawk}{(code)}
 \begin{document}
-
-% ============================================================
-% PAGE 1
-% ============================================================
-
-\pagetitle{IVAO \hspace{0.5em} / \hspace{0.5em} IFR Cheatsheet}
-{01 \hspace{0.5em} PREPARATION \& DEPARTURE
- \hfill ICAO-style reference}
-
-{\small
-\textbf{Scope:} Flight simulation only, not real-world operational guidance.
-Use current charts, aircraft procedures, local AIP information and IVAO
-division rules. Examples are illustrative, not usable clearances.
-}
-
-\begin{multicols}{2}
-\raggedcolumns
-
-\begin{card}{1 \hspace{0.5em} Before connecting}
 \begin{itemize}
-  \item Connect on a stand or other suitable parking position;
-        never spawn on a runway.
-  \item Check callsign, aircraft type, equipment and surveillance
-        capability in the flight plan.
-  \item Review weather, operational notices, runway availability,
-        route, SID, STAR and approach options.
-  \item Check aircraft performance, fuel, alternate and applicable
-        minima.
-  \item Load the aircraft and avionics consistently with the filed plan.
-  \item Have airport diagrams and departure, arrival and approach
-        charts available.
-  \item Check controller coverage and any published local procedures.
+\item \textbf{IFR Clearance (RNAV SID)}: \\
+\textit{Pilot request:} Clearance, \callsign, IFR to \destination~airport, ready to copy. \\
+\textit{ATC:} \callsign, cleared to \destination~airport, \SID~departure, then as filed. Climb via the sid, expect (cruise level) 10 minutes after departure. Departure frequency (freq), squawk \squawk. \\
+\textit{Pilot readback:} Cleared to \destination~airport via \SID~departure, then as filed. Climb via the SID, expect (cruise level) 10 minutes after departure, departure frequency (freq), squawk \squawk, \callsign.
+
+\item \textbf{IFR Clearance (Vectors)}: \\
+\textit{Pilot request:} Clearance, \callsign, IFR to \destination~airport, ready to copy. \\
+\textit{ATC:} \callsign, cleared to \destination~airport, \SID~departure, radar vectors (fix), then as filed. Maintain (altitude), expect (cruise level) 10 minutes after departure. Departure frequency (freq), squawk \squawk. \\
+\textit{Pilot readback:} Cleared to \destination~airport via \SID~departure, radar vectors (fix), then as filed. Maintain (altitude), expect (cruise level) 10 minutes after departure, departure frequency (freq), squawk \squawk, \callsign.
+
+\item \textbf{Pushback (non-movement area)}: \\
+\textit{Pilot request:} Ground, \callsign, stand/gate (gate), request push and start. \\
+\textit{ATC:} Readback correct, start and push at your discretion, expect runway (rwy) for departure, advise when ready to taxi. \\
+\textit{Pilot response:} Start and push at our discretion, expect runway (rwy), will advise ready to taxi, \callsign.
+
+\item \textbf{Pushback (movement area)}: \\
+\textit{Pilot request:} Ground, \callsign, stand/gate (gate), request push and start. \\
+\textit{ATC:} Readback correct, start and push approved, face (direction), expect runway (rwy) for departure, advise when ready to taxi. \\
+\textit{Pilot response:} Start and push approved, face (direction), expect runway (rwy), will advise ready to taxi, \callsign.
+
+\item \textbf{Taxi}: \\
+\textit{Pilot request:} Ground, \callsign, ready to taxi. \\
+\textit{ATC:} \callsign, runway (rwy), taxi via (twy’s), cross/hold short runway (rwy). \\
+\textit{Pilot readback:} Runway (rwy), taxi via (twy’s), cross/hold short runway (rwy), \callsign.
+
+\item \textbf{Line-up}: \\
+\textit{Pilot request:} Tower, \callsign, ready for departure. \\
+\textit{ATC:} \callsign, runway (rwy), line up and wait. \\
+\textit{Pilot readback:} Runway (rwy), line up and wait, \callsign.
+
+\item \textbf{Line-up at intersection}: \\
+\textit{Pilot request:} Tower, \callsign, ready for departure at (twy). \\
+\textit{ATC:} \callsign, runway (rwy) at (twy), line up and wait. \\
+\textit{Pilot readback:} Runway (rwy) at (twy), line up and wait, \callsign.
+
+\item \textbf{Takeoff (RNAV)}: \\
+\textit{ATC:} \callsign, RNAV (initial fix), wind (degrees) at (speed). Runway (rwy), cleared for takeoff. \\
+\textit{Pilot readback:} RNAV (initial fix), runway (rwy), cleared for takeoff, \callsign.
+
+\item \textbf{Takeoff (Vectors)}: \\
+\textit{ATC:} \callsign, fly heading (hdg), wind (degrees) at (speed). Runway (rwy), cleared for takeoff. \\
+\textit{Pilot readback:} Fly heading (hdg), runway (rwy), cleared for takeoff, \callsign.
+
+\item \textbf{Takeoff at intersection}: \\
+\textit{ATC:} \callsign, fly heading (hdg), wind (degrees) at (speed). Runway (rwy) at (twy), cleared for takeoff. \\
+\textit{Pilot readback:} Fly heading (hdg), runway (rwy) at (twy), cleared for takeoff, \callsign.
+
+\item \textbf{Landing}: \\
+\textit{ATC:} \callsign, wind (degrees) at (speed), runway (rwy), cleared to land. \\
+\textit{Pilot readback:} Runway (rwy), cleared to land, \callsign.
+
+\item \textbf{Landing w/ sequence}: \\
+\textit{ATC:} \callsign, number 2, following a (aircraft) on (distance) mile final, wind (degrees) at (speed), runway (rwy), cleared to land. \\
+\textit{Pilot readback:} Number 2, following the (aircraft), runway (rwy), cleared to land, \callsign.
+
+\item \textbf{Taxi-in}: \\
+\textit{Pilot request:} Ground, \callsign, clear of runway (rwy), request taxi to parking. \\
+\textit{ATC:} \callsign, taxi to (parking) via (twy’s), hold short/cross runway (rwy). \\
+\textit{Pilot readback:} Taxi to (parking) via (twy’s), hold short/cross runway (rwy), \callsign.
 \end{itemize}
-
-\warning{A filed flight plan is not an ATC clearance.}
-\end{card}
-
-\begin{card}{2 \hspace{0.5em} Establish contact}
-\labeltext{Who to call}
-\begin{itemize}
-  \item Use the responsible online controller's published frequency.
-  \item A higher controller may provide top-down service, but check
-        coverage; do not assume every position is covered.
-  \item Listen first. Avoid transmitting over another exchange.
-\end{itemize}
-
-\labeltext{Initial call usually includes}\\
-Station called, callsign, position, relevant level and request.
-For departure, include the ATIS identifier when available.
-
-\radio{Frankfurt Delivery, Speedbird 123, stand A24, information Alpha,
-request IFR clearance to [destination].}
-
-\labeltext{When no controller provides service}\\
-Use the current IVAO-published advisory procedure and frequency
-for your area. Make concise, useful traffic reports and monitor
-for other aircraft.
-
-\warning{Advisory transmissions are not ATC clearances.}
-\end{card}
-
-\begin{card}{3 \hspace{0.5em} Copy the IFR clearance}
-\labeltext{C--R--A--F--T: a useful note-taking aid}
-
-\begin{tabularx}{\linewidth}{@{}>{\bfseries}l X@{}}
-C & Clearance limit / destination\\
-R & Route, SID and any route amendments\\
-A & Initial altitude or level and restrictions\\
-F & Departure frequency, if assigned\\
-T & Transponder code\\
-\end{tabularx}
-
-\radio{Cleared to [destination] via [SID], flight-planned route.
-Climb to altitude 5,000 feet, QNH 1016.
-Squawk 4271.}
-
-\labeltext{Read back}\\
-Clearance limit, route/SID, assigned level, pressure setting,
-squawk and any additional restrictions as applicable.
-
-\warning{An SID clearance is not unrestricted climb authority.
-Understand both the cleared level and applicable published restrictions.}
-\end{card}
-
-\begin{card}{4 \hspace{0.5em} Pushback \& taxi}
-\begin{itemize}
-  \item Obtain start-up and pushback approval where required.
-  \item Request taxi when ready; copy the route and holding point.
-  \item Follow the airport diagram and monitor signs and markings.
-  \item Stop at the clearance limit or holding point.
-  \item Set transponder/ground-surveillance mode according to the
-        aircraft, client and local procedures.
-\end{itemize}
-
-\radio{Ground, Speedbird 123, stand 24, request start-up and pushback.}
-
-\radio{Ground, Speedbird 123, request taxi.}
-
-\radio{Speedbird 123, taxi to holding point runway 27 via Alpha and Bravo.}
-
-\radio{Ground, Speedbird 123, approaching runway 18 at Bravo, request crossing.}
-
-\radio{Speedbird 123, cross runway 18 at Bravo, then continue taxi via Bravo to holding point runway 27.}
-
-\warning{Taxi clearance does not authorise runway entry or crossing.
-Obtain explicit clearance for each runway crossing.}
-\end{card}
-
-\begin{card}{5 \hspace{0.5em} Take-off \& initial climb}
-\labeltext{Before entering the runway}
-\begin{itemize}
-  \item Confirm runway, departure, initial level and take-off performance.
-  \item Complete the aircraft's before-take-off checklist.
-  \item Confirm an explicit line-up or take-off clearance.
-\end{itemize}
-
-\radio{Frankfurt Tower, Speedbird 123, holding point Runway 27, ready for departure}
-
-\radio{Speedbird 123. Runway 27, cleared for take-off.}
-
-\labeltext{After departure}
-\begin{itemize}
-  \item Fly the cleared SID or assigned heading.
-  \item Respect applicable altitude and speed restrictions.
-  \item Do not climb above the assigned level.
-  \item Change frequency when instructed; check in with current
-        level and cleared level.
-\end{itemize}
-
-\radio{Departure, Speedbird 123, passing altitude 2,300 feet,
-climbing to altitude 5,000 feet.}
-
-\warning{``Line up and wait'' is not a take-off clearance.}
-\end{card}
-
-\end{multicols}
-
-\newpage
-
-% ============================================================
-% PAGE 2
-% ============================================================
-
-\pagetitle{IVAO \hspace{0.5em} / \hspace{0.5em} IFR Cheatsheet}
-{02 \hspace{0.5em} EN ROUTE, ARRIVAL \& RADIO
- \hfill Aviate \hspace{0.5em}$\rightarrow$\hspace{0.5em} Navigate
- \hspace{0.5em}$\rightarrow$\hspace{0.5em} Communicate}
-
-\begin{multicols}{2}
-\raggedcolumns
-
-\begin{card}{6 \hspace{0.5em} Climb, cruise \& handovers}
-\begin{itemize}
-  \item Follow the cleared route, level and speed instructions.
-  \item Obtain clearance before changing route or level in controlled
-        flight, unless an applicable emergency procedure requires otherwise.
-  \item Request deviations early; state the direction or extent needed.
-  \item At handover, read back the frequency and contact the next station.
-  \item If unable to comply, say \textbf{unable} and explain briefly.
-\end{itemize}
-
-\radio{Control, Speedbird 123, flight level 350.}
-
-\radio{Speedbird 123, request descent.}
-
-\labeltext{Altimeter reference}
-\begin{itemize}
-  \item \textbf{Altitude:} normally referenced to local QNH.
-  \item \textbf{Flight level:} standard pressure,
-        1013.25 hPa / 29.92 inHg.
-  \item Climbing: change to standard at the transition altitude,
-        according to local procedures.
-  \item Descending: change to QNH at the transition level,
-        according to local procedures.
-\end{itemize}
-
-\warning{Transition altitude and transition level are not universally
-the same. Check current local information.}
-\end{card}
-
-\begin{card}{7 \hspace{0.5em} Descent \& arrival briefing}
-\begin{itemize}
-  \item Obtain arrival weather and ATIS.
-  \item Brief runway, STAR, expected approach and missed approach.
-  \item Check terrain, minima, landing performance and fuel.
-  \item Confirm the cleared descent level and applicable restrictions.
-  \item Load and cross-check the procedure; do not silently substitute
-        a different route.
-\end{itemize}
-
-\labeltext{Planning aid only}\\
-A nominal $3^\circ$ descent needs about:
-\[
-  \text{distance (NM)}
-  \approx
-  3 \times \text{height to lose (thousands of ft)}
-\]
-Allow extra distance for deceleration, wind and restrictions.
-This does not replace the aircraft's descent planning.
-
-\warning{A STAR assignment alone does not authorise descent.
-Clarify any ambiguous vertical clearance.}
-\end{card}
-
-\begin{card}{8 \hspace{0.5em} Approach, landing \& missed approach}
-\begin{itemize}
-  \item Confirm approach clearance, runway and any intercept instructions.
-  \item Follow assigned levels until the approach clearance and
-        applicable procedure permit descent.
-  \item Apply the aircraft/operator's stabilised-approach criteria.
-  \item Continue below the applicable minimum only when the required
-        conditions are met.
-  \item Verify landing clearance before landing at a controlled aerodrome.
-\end{itemize}
-
-\radio{Runway 27, cleared to land, Speedbird 123.}
-
-\labeltext{If going around}
-\begin{itemize}
-  \item Fly the aircraft and execute the applicable missed-approach
-        procedure, or ATC instructions as appropriate.
-  \item Advise ATC as soon as workload permits.
-  \item Confirm any revised heading or level.
-\end{itemize}
-
-\radio{Speedbird 123, going around.}
-
-\labeltext{After landing}\\
-Vacate safely, ensure the entire aircraft is clear, and contact ground
-when instructed. Obtain taxi instructions to parking.
-\end{card}
-
-\begin{card}{9 \hspace{0.5em} Radio discipline \& readbacks}
-\labeltext{Keep it short}\\
-Listen $\rightarrow$ think $\rightarrow$ transmit.
-Use standard phraseology and include your callsign.
-
-\labeltext{Read back safety-critical items}
-\begin{itemize}
-  \item Route clearances and amendments.
-  \item Runway entry, landing, take-off, holding-short,
-        crossing and backtrack instructions.
-  \item Runway in use, altimeter settings and SSR codes.
-  \item Level, heading and speed instructions.
-  \item Frequency changes and other items required locally.
-\end{itemize}
-
-\begin{tabularx}{\linewidth}{@{}>{\bfseries}l X@{}}
-Say again & Repeat all or the relevant part.\\
-Confirm & Ask for verification.\\
-Standby & Wait; not an approval.\\
-Unable & Cannot comply.\\
-Wilco & Understood; will comply.\\
-Roger & Received; not a required readback.\\
-\end{tabularx}
-
-\warning{Never guess a clearance. Ask for repetition or clarification.}
-\end{card}
-
-\begin{card}{10 \hspace{0.5em} IVAO habits \& final reminders}
-\begin{itemize}
-  \item Keep charts and the IVAO pilot client accessible.
-  \item Monitor the assigned frequency and relevant network messages.
-  \item Report connection or voice problems promptly using an
-        available permitted method.
-  \item Do not assume a real-world radio-failure procedure is the
-        correct response to an IVAO client problem.
-  \item Follow current IVAO rules concerning emergencies,
-        special operations and disconnections.
-  \item Tell ATC early if inexperienced or unfamiliar with a procedure.
-  \item If overloaded, ask for delay vectors, a hold or clarification.
-\end{itemize}
-
-\textbf{Final scan:}
-correct route \textbullet\ correct level \textbullet\
-correct frequency \textbullet\ correct pressure setting
-\textbullet\ next clearance limit.
-\end{card}
-
-\begin{card}{11 \hspace{0.5em} ICAO radiotelephony alphabet}
-\begin{center}
-\begin{tabular}{@{}ll@{\hspace{2em}}ll@{}}
-  \textbf{A} & Alfa     & \textbf{N} & November \\
-  \textbf{B} & Bravo    & \textbf{O} & Oscar    \\
-  \textbf{C} & Charlie  & \textbf{P} & Papa     \\
-  \textbf{D} & Delta    & \textbf{Q} & Quebec   \\
-  \textbf{E} & Echo     & \textbf{R} & Romeo    \\
-  \textbf{F} & Foxtrot  & \textbf{S} & Sierra   \\
-  \textbf{G} & Golf     & \textbf{T} & Tango    \\
-  \textbf{H} & Hotel    & \textbf{U} & Uniform  \\
-  \textbf{I} & India    & \textbf{V} & Victor   \\
-  \textbf{J} & Juliett  & \textbf{W} & Whiskey  \\
-  \textbf{K} & Kilo     & \textbf{X} & X-ray    \\
-  \textbf{L} & Lima     & \textbf{Y} & Yankee   \\
-  \textbf{M} & Mike     & \textbf{Z} & Zulu     \\
-\end{tabular}
-\end{center}
-\end{card}
-
-\end{multicols}
-
 \end{document}
-
