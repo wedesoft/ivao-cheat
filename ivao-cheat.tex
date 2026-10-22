@@ -1,96 +1,258 @@
 \documentclass{article}
 \usepackage[margin=1in]{geometry}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.6em}
+
 \newcommand{\callsign}{D-BWEDE}
 \newcommand{\destination}{Southampton}
 \newcommand{\SID}{SOBRA1F}
 \newcommand{\squawk}{(code)}
+
 \begin{document}
-\begin{itemize}
-\item \textbf{IFR Clearance (RNAV SID)}: \\
-\textit{Pilot request:} Clearance, \callsign, IFR to \destination~airport, ready to copy. \\
-\textit{ATC:} \callsign, cleared to \destination~airport, \SID~departure, then as filed. Climb via the sid, expect (cruise level) 10 minutes after departure. Departure frequency (freq), squawk \squawk. \\
-\textit{Pilot readback:} Cleared to \destination~airport via \SID~departure, then as filed. Climb via the SID, expect (cruise level) 10 minutes after departure, departure frequency (freq), squawk \squawk, \callsign.
 
-\item \textbf{IFR Clearance (Vectors)}: \\
-\textit{Pilot request:} Clearance, \callsign, IFR to \destination~airport, ready to copy. \\
-\textit{ATC:} \callsign, cleared to \destination~airport, \SID~departure, radar vectors (fix), then as filed. Maintain (altitude), expect (cruise level) 10 minutes after departure. Departure frequency (freq), squawk \squawk. \\
-\textit{Pilot readback:} Cleared to \destination~airport via \SID~departure, radar vectors (fix), then as filed. Maintain (altitude), expect (cruise level) 10 minutes after departure, departure frequency (freq), squawk \squawk, \callsign.
+\section{IFR Phraseology}
 
-\item \textbf{Pushback (non-movement area)}: \\
-\textit{Pilot request:} Ground, \callsign, stand/gate (gate), request push and start. \\
-\textit{ATC:} Readback correct, start and push at your discretion, expect runway (rwy) for departure, advise when ready to taxi. \\
-\textit{Pilot response:} Start and push at our discretion, expect runway (rwy), will advise ready to taxi, \callsign.
+\section{IFR Clearance (RNAV SID)}
 
-\item \textbf{Pushback (movement area)}: \\
-\textit{Pilot request:} Ground, \callsign, stand/gate (gate), request push and start. \\
-\textit{ATC:} Readback correct, start and push approved, face (direction), expect runway (rwy) for departure, advise when ready to taxi. \\
-\textit{Pilot response:} Start and push approved, face (direction), expect runway (rwy), will advise ready to taxi, \callsign.
+\textbf{Pilot request:} Clearance, \callsign, IFR to \destination~airport, ready to copy. \\
 
-\item \textbf{Taxi}: \\
-\textit{Pilot request:} Ground, \callsign, ready to taxi. \\
-\textit{ATC:} \callsign, runway (rwy), taxi via (twy’s), cross/hold short runway (rwy). \\
-\textit{Pilot readback:} Runway (rwy), taxi via (twy’s), cross/hold short runway (rwy), \callsign.
+\textbf{ATC:} \callsign, cleared to \destination~airport, \SID~departure, then as filed. Climb via the sid, expect (cruise level) 10 minutes after departure. Departure frequency (freq), squawk \squawk. \\
 
-\item \textbf{Line-up}: \\
-\textit{Pilot request:} Tower, \callsign, ready for departure. \\
-\textit{ATC:} \callsign, runway (rwy), line up and wait. \\
-\textit{Pilot readback:} Runway (rwy), line up and wait, \callsign.
+\textbf{Pilot readback:} Cleared to \destination~airport via \SID~departure, then as filed. Climb via the SID, expect (cruise level) 10 minutes after departure, departure frequency (freq), squawk \squawk, \callsign.
 
-\item \textbf{Line-up at intersection}: \\
-\textit{Pilot request:} Tower, \callsign, ready for departure at (twy). \\
-\textit{ATC:} \callsign, runway (rwy) at (twy), line up and wait. \\
-\textit{Pilot readback:} Runway (rwy) at (twy), line up and wait, \callsign.
+\section{IFR Clearance (Vectors)}
 
-\item \textbf{Takeoff (RNAV)}: \\
-\textit{ATC:} \callsign, RNAV (initial fix), wind (degrees) at (speed). Runway (rwy), cleared for takeoff. \\
-\textit{Pilot readback:} RNAV (initial fix), runway (rwy), cleared for takeoff, \callsign.
+\textbf{Pilot request:} Clearance, \callsign, IFR to \destination~airport, ready to copy. \\
 
-\item \textbf{Takeoff (Vectors)}: \\
-\textit{ATC:} \callsign, fly heading (hdg), wind (degrees) at (speed). Runway (rwy), cleared for takeoff. \\
-\textit{Pilot readback:} Fly heading (hdg), runway (rwy), cleared for takeoff, \callsign.
+\textbf{ATC:} \callsign, cleared to \destination~airport, \SID~departure, radar vectors (fix), then as filed. Maintain (altitude), expect (cruise level) 10 minutes after departure. Departure frequency (freq), squawk \squawk. \\
 
-\item \textbf{Takeoff at intersection}: \\
-\textit{ATC:} \callsign, fly heading (hdg), wind (degrees) at (speed). Runway (rwy) at (twy), cleared for takeoff. \\
-\textit{Pilot readback:} Fly heading (hdg), runway (rwy) at (twy), cleared for takeoff, \callsign.
+\textbf{Pilot readback:} Cleared to \destination~airport via \SID~departure, radar vectors (fix), then as filed. Maintain (altitude), expect (cruise level) 10 minutes after departure, departure frequency (freq), squawk \squawk, \callsign.
 
-\item \textbf{Landing}: \\
-\textit{ATC:} \callsign, wind (degrees) at (speed), runway (rwy), cleared to land. \\
-\textit{Pilot readback:} Runway (rwy), cleared to land, \callsign.
+\section{Pushback (non-movement area)}
 
-\item \textbf{Landing w/ sequence}: \\
-\textit{ATC:} \callsign, number 2, following a (aircraft) on (distance) mile final, wind (degrees) at (speed), runway (rwy), cleared to land. \\
-\textit{Pilot readback:} Number 2, following the (aircraft), runway (rwy), cleared to land, \callsign.
+\textbf{Pilot request:} Ground, \callsign, stand/gate (gate), request push and start. \\
 
-\item \textbf{Taxi-in}: \\
-\textit{Pilot request:} Ground, \callsign, clear of runway (rwy), request taxi to parking. \\
-\textit{ATC:} \callsign, taxi to (parking) via (twy’s), hold short/cross runway (rwy). \\
-\textit{Pilot readback:} Taxi to (parking) via (twy’s), hold short/cross runway (rwy), \callsign.
-\end{itemize}
+\textbf{ATC:} Readback correct, start and push at your discretion, expect runway (rwy) for departure, advise when ready to taxi. \\
 
-\begin{table}[htbp]
-    \centering
-    \caption{NATO Phonetic Alphabet}
-    \label{tab:radio-alphabet}
-    \begin{tabular}{cl|cl}
-        \hline
-        \textbf{Letter} & \textbf{Code word} &
-        \textbf{Letter} & \textbf{Code word} \\
-        \hline
-        A & Alfa     & N & November \\
-        B & Bravo    & O & Oscar    \\
-        C & Charlie  & P & Papa     \\
-        D & Delta    & Q & Quebec   \\
-        E & Echo     & R & Romeo    \\
-        F & Foxtrot  & S & Sierra   \\
-        G & Golf     & T & Tango    \\
-        H & Hotel    & U & Uniform  \\
-        I & India    & V & Victor   \\
-        J & Juliett  & W & Whiskey  \\
-        K & Kilo     & X & X-ray    \\
-        L & Lima     & Y & Yankee   \\
-        M & Mike     & Z & Zulu     \\
-        \hline
-    \end{tabular}
-\end{table}
+\textbf{Pilot response:} Start and push at our discretion, expect runway (rwy), will advise ready to taxi, \callsign.
+
+\section{Pushback (movement area)}
+
+\textbf{Pilot request:} Ground, \callsign, stand/gate (gate), request push and start. \\
+
+\textbf{ATC:} Readback correct, start and push approved, face (direction), expect runway (rwy) for departure, advise when ready to taxi. \\
+
+\textbf{Pilot response:} Start and push approved, face (direction), expect runway (rwy), will advise ready to taxi, \callsign.
+
+\section{Taxi}
+
+\textbf{Pilot request:} Ground, \callsign, ready to taxi. \\
+
+\textbf{ATC:} \callsign, runway (rwy), taxi via (twy’s), cross/hold short runway (rwy). \\
+
+\textbf{Pilot readback:} Runway (rwy), taxi via (twy’s), cross/hold short runway (rwy), \callsign.
+
+\section{Line-up}
+
+\textbf{Pilot request:} Tower, \callsign, ready for departure. \\
+
+\textbf{ATC:} \callsign, runway (rwy), line up and wait. \\
+
+\textbf{Pilot readback:} Runway (rwy), line up and wait, \callsign.
+
+\section{Line-up at intersection}
+
+\textbf{Pilot request:} Tower, \callsign, ready for departure at (twy). \\
+
+\textbf{ATC:} \callsign, runway (rwy) at (twy), line up and wait. \\
+
+\textbf{Pilot readback:} Runway (rwy) at (twy), line up and wait, \callsign.
+
+\section{Takeoff (RNAV)}
+
+\textbf{ATC:} \callsign, RNAV (initial fix), wind (degrees) at (speed). Runway (rwy), cleared for takeoff. \\
+
+\textbf{Pilot readback:} RNAV (initial fix), runway (rwy), cleared for takeoff, \callsign.
+
+\section{Takeoff (Vectors)}
+
+\textbf{ATC:} \callsign, fly heading (hdg), wind (degrees) at (speed). Runway (rwy), cleared for takeoff. \\
+
+\textbf{Pilot readback:} Fly heading (hdg), runway (rwy), cleared for takeoff, \callsign.
+
+\section{Takeoff at intersection}
+
+\textbf{ATC:} \callsign, fly heading (hdg), wind (degrees) at (speed). Runway (rwy) at (twy), cleared for takeoff. \\
+
+\textbf{Pilot readback:} Fly heading (hdg), runway (rwy) at (twy), cleared for takeoff, \callsign.
+
+\section{Landing}
+
+\textbf{ATC:} \callsign, wind (degrees) at (speed), runway (rwy), cleared to land. \\
+
+\textbf{Pilot readback:} Runway (rwy), cleared to land, \callsign.
+
+\section{Landing w/ sequence}
+
+\textbf{ATC:} \callsign, number 2, following a (aircraft) on (distance) mile final, wind (degrees) at (speed), runway (rwy), cleared to land. \\
+
+\textbf{Pilot readback:} Number 2, following the (aircraft), runway (rwy), cleared to land, \callsign.
+
+\section{Taxi-in}
+
+\textbf{Pilot request:} Ground, \callsign, clear of runway (rwy), request taxi to parking. \\
+
+\textbf{ATC:} \callsign, taxi to (parking) via (twy’s), hold short/cross runway (rwy). \\
+
+\textbf{Pilot readback:} Taxi to (parking) via (twy’s), hold short/cross runway (rwy), \callsign.
+
+\section{NATO Phonetic Alphabet}
+
+\begin{tabular}{cl|cl}
+  \hline
+  \textbf{Letter} & \textbf{Code word} &
+  \textbf{Letter} & \textbf{Code word} \\
+  \hline
+  A & Alfa     & N & November \\
+  B & Bravo    & O & Oscar    \\
+  C & Charlie  & P & Papa     \\
+  D & Delta    & Q & Quebec   \\
+  E & Echo     & R & Romeo    \\
+  F & Foxtrot  & S & Sierra   \\
+  G & Golf     & T & Tango    \\
+  H & Hotel    & U & Uniform  \\
+  I & India    & V & Victor   \\
+  J & Juliett  & W & Whiskey  \\
+  K & Kilo     & X & X-ray    \\
+  L & Lima     & Y & Yankee   \\
+  M & Mike     & Z & Zulu     \\
+  \hline
+\end{tabular}
+
+\section{IFR Example}
+
+\subsection*{Departure: London Gatwick (EGKK)}
+
+\subsubsection*{1. Delivery / Clearance}
+
+\textbf{Pilot:} Gatwick Delivery, \callsign, Stand 552, Information Bravo, request IFR clearance to Amsterdam Schiphol.
+
+\textbf{EGKK\_DEL:} \callsign, Gatwick Delivery, good morning. Cleared to Amsterdam Schiphol via the LAM 6M departure, flight level 120, squawk 4215.
+
+\textbf{Pilot:} Cleared to Amsterdam Schiphol via LAM 6M departure, flight level 120, squawk 4215, \callsign.
+
+\textbf{EGKK\_DEL:} \callsign, readback correct. Contact Gatwick Ground on 121.805 when ready for push and start.
+
+\textbf{Pilot:} Ground on 121.805, \callsign.
+
+\subsubsection*{2. Pushback \& Taxi}
+
+\textbf{Pilot:} Gatwick Ground, \callsign, Stand 552, request push and start.
+
+\textbf{EGKK\_GND:} \callsign, Gatwick Ground, push and start approved, facing tail south.
+
+\textbf{Pilot:} Push and start approved, facing tail south, \callsign.
+
+\textit{(After engine start and checklist completion)}
+
+\textbf{Pilot:} \callsign, ready for taxi.
+
+\textbf{EGKK\_GND:} \callsign, taxi to holding point Runway 26L via taxiways Juliet and Bravo, hold short of Runway 26L.
+
+\textbf{Pilot:} Taxi to holding point Runway 26L via Juliet and Bravo, hold short Runway 26L, \callsign.
+
+\textbf{EGKK\_GND:} \callsign, contact Gatwick Tower on 124.230 at the holding point.
+
+\textbf{Pilot:} Tower on 124.230, \callsign.
+
+\subsubsection*{3. Departure \& Takeoff}
+
+\textbf{Pilot:} Gatwick Tower, \callsign, holding short Runway 26L, ready for departure.
+
+\textbf{EGKK\_TWR:} \callsign, Gatwick Tower, line up and wait Runway 26L.
+
+\textbf{Pilot:} Line up and wait Runway 26L, \callsign.
+
+\textbf{EGKK\_TWR:} \callsign, wind 240 degrees 10 knots, Runway 26L, cleared for takeoff.
+
+\textbf{Pilot:} Cleared for takeoff Runway 26L, \callsign.
+
+\textit{(Airborne and climbing)}
+
+\textbf{EGKK\_TWR:} \callsign, contact London Control on 126.950. Have a good flight.
+
+\textbf{Pilot:} London Control on 126.950, goodbye, \callsign.
+
+\subsection*{En Route: Radar Vectors \& Handoffs}
+
+\subsubsection*{4. Area Control (Radar)}
+
+\textbf{Pilot:} London Control, \callsign, passing 3,000 feet climbing to flight level 120 on the LAM 6M departure.
+
+\textbf{LON\_CTR:} \callsign, London Control, radar contact. Climb to flight level 240.
+
+\textbf{Pilot:} Climb to flight level 240, \callsign.
+
+\textit{(Later during cruise)}
+
+\textbf{LON\_CTR:} \callsign, direct to REDFA, expect descent in 10 miles.
+
+\textbf{Pilot:} Direct REDFA, \callsign.
+
+\textbf{LON\_CTR:} \callsign, contact Dutch Control on 125.750. Good day.
+
+\textbf{Pilot:} Dutch Control on 125.750, \callsign.
+
+\subsection*{Arrival: Amsterdam Schiphol (EHAM)}
+
+\subsubsection*{5. Descent \& Approach}
+
+\textbf{Pilot:} Dutch Control, \callsign, flight level 240, Information Delta.
+
+\textbf{EHAM\_CTR:} \callsign, Dutch Control, descend flight level 100, QNH 1013, expect ILS approach Runway 18R via ARTIP 1A arrival.
+
+\textbf{Pilot:} Descend flight level 100, QNH 1013, expecting ILS Runway 18R via ARTIP 1A arrival, \callsign.
+
+\textbf{EHAM\_CTR:} \callsign, turn left heading 090, vectors for ILS Runway 18R, descend to 3,000 feet.
+
+\textbf{Pilot:} Turn left heading 090, descend to 3,000 feet, \callsign.
+
+\textbf{EHAM\_CTR:} \callsign, turn left heading 060, cleared ILS Runway 18R approach, report established.
+
+\textbf{Pilot:} Turn left heading 060, cleared ILS Runway 18R approach, Wilco, \callsign.
+
+\textit{(Once localizer is captured)}
+
+\textbf{Pilot:} \callsign, established ILS Runway 18R.
+
+\textbf{EHAM\_CTR:} \callsign, contact Schiphol Tower on 118.275.
+
+\textbf{Pilot:} Tower on 118.275, \callsign.
+
+\subsubsection*{6. Landing \& Arrival Taxi}
+
+\textbf{Pilot:} Schiphol Tower, \callsign, established ILS Runway 18R.
+
+\textbf{EHAM\_TWR:} \callsign, Schiphol Tower, wind 200 degrees 8 knots, Runway 18R, cleared to land.
+
+\textbf{Pilot:} Cleared to land Runway 18R, \callsign.
+
+\textit{(Touchdown and rollout)}
+
+\textbf{EHAM\_TWR:} \callsign, vacate right via taxiway Victor, contact Schiphol Ground on 121.800.
+
+\textbf{Pilot:} Vacate right Victor, Ground on 121.800, \callsign.
+
+\textbf{Pilot:} Schiphol Ground, \callsign, vacated Runway 18R on Victor.
+
+\textbf{EHAM\_GND:} \callsign, taxi to Stand E4 via taxiways Victor and Alpha.
+
+\textbf{Pilot:} Taxi to Stand E4 via Victor and Alpha, \callsign.
+
+\textit{(Arriving at gate)}
+
+\textbf{EHAM\_GND:} \callsign, on stand E4, shutdown approved. Frequency change to Unicom 122.800. Have a nice day.
+
+\textbf{Pilot:} Shutdown approved, Unicom 122.800, thanks for the service, goodbye!
 
 \end{document}
