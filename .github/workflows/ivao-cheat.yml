@@ -14,6 +14,7 @@ jobs:
       - name: latex2pdf
         id: compile-latex-document
         uses: thomas-chauvet/latex2pdf-action@2.0.1
+        with:
           output_dir: .
           main_latex_file: ivao-cheat.tex
           ctan_packages:
