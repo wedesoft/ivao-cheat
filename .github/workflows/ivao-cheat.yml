@@ -9,19 +9,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
-
-      - name: Build PDF
-        uses: BaseMax/github-actions-build-latex-pdf@v1
-        with:
-          tex_path: "ivao-cheat.tex"
-
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
       - name: Set up Git repository
         uses: actions/checkout@v4
       - name: latex2pdf
